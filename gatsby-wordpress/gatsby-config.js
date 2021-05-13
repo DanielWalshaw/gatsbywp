@@ -14,6 +14,23 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-source-wordpress`,
+    {
+        resolve: `gatsby-source-wordpress`,
+        options: {
+            // Specify the URL of the WordPress source
+            baseUrl: `new.nextrend.com.au`,
+            protocol: `https`,
+            // Indicates if a site is hosted on WordPress.com
+            hostingWPCOM: false,
+            // Specify which URL structures to fetch
+            includedRoutes: [
+              '**/posts',
+              '**/tags',
+              '**/categories'
+            ]
+        },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
